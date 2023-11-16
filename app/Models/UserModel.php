@@ -8,4 +8,11 @@ class UserModel extends Model
     protected $primaryKey = 'id';
 
     protected $allowedFields = ['name', 'email'];
+
+    public function search($name, $email)
+    {
+        // Perform the search based on 'name' and 'email'
+        return $this->like('name', $name)
+            ->like('email', $email);
+    }
 }
